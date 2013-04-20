@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>About</title>
+
+    <!-- WinJS references -->
+    <link href="//Microsoft.WinJS.1.0/css/ui-dark.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.1.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.1.0/js/ui.js"></script>
+
+    <link href="about.css" rel="stylesheet" />
+    <script src="about.js"></script>
+</head>
+<body>
+    <div id="about" data-win-control="WinJS.UI.SettingsFlyout" data-win-options="{width: 'narrow'}">
+        <div class="SettingsPane">
+            <div class="win-label">
+                <button onclick="WinJS.UI.SettingsFlyout.show()" class="win-backbutton">
+                </button>
+                <span class="SettingsTitle">About</span>
+            </div>
+            <article class="SettingsContent">
+                <h2>MusicTab Guide</h2>
+                <h4>Version 3.0 released in January, 2013</h4>
+                <p>This application allows you to search, organize and view tabs stored in the following formats:</p>
+                <ul>
+                    <li>Guitar Pro (gp3, gp4, gp5, gpx)</li>
+                    <li>MusicXml (xml)</li>
+                </ul>
+                <p>Also it allows you to create your custom tabs using vextab language and provides some additional tools to improve your guitar skills.</p>
+                <p>Rate MusicTab Guide if you are interesting in next versions with new features and improvements.</p>
+                <p>This application uses vexflow library to render stave notes and chords. </p>
+                <p>If you have suggestions or comments, don't hesitate to contact me at <a href="mailto:ilya.builuk@gmail.com">ilya.builuk@gmail.com</a></p>
+            </article>
+        </div>
+    </div> 
+</body>
+</html>

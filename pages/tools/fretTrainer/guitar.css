@@ -1,0 +1,57 @@
+﻿
+
+#eww_layout {
+    width: 100%;
+
+}
+
+#eww_layout td {
+
+}
+
+#fretboard {
+    cursor: pointer;
+    width: 100%;
+}
+ #instructions {
+     padding-top: 30px;
+     text-align: center;
+ }
+ #play {
+     width: 120px;
+     height: 60px;
+     font-size: 30px;
+ }
+
+ .instruction {
+    font-size: 200%;
+    padding-left: 0.25em;
+    padding-right: 0.25em;
+
+
+}
+
+#note_label {
+    margin-left: 2em;
+}
+
+.right {
+    text-align: right;
+}
+
+
+.hidden {
+   display: none;
+}
+
+#spec_row, #instructions_row {
+    height: 7ex;
+}
+
+#handed_box {
+    vertical-align: top;
+}
+
+.settings {
+    width: 160px;
+}

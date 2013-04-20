@@ -1,0 +1,26 @@
+﻿.fragment header[role=banner] #selectBox{
+    position:fixed;
+    top:60px;
+    right:40px;
+    
+}
+.fragment header[role=banner] select {
+    height: 50px;
+    width: 148px;
+    font-size: 30px;
+    margin-left: 8px;
+}
+
+#container {
+    padding-top: 20px;
+
+}
+
+#fretboard {
+    padding-top: 5px;   
+}
+@media screen and (-ms-view-state: snapped) {
+    .fragment header[role=banner] select {
+      display:none;
+    }
+ }

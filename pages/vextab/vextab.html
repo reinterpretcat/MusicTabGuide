@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>About</title>
+
+    <!-- WinJS references -->
+    <link href="//Microsoft.WinJS.1.0/css/ui-dark.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.1.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.1.0/js/ui.js"></script>
+    
+    <link href="/css/tabdiv.css" rel="stylesheet" />
+    <link href="vextab.css" rel="stylesheet" />
+    <!--<script src="vexflow-min.js"></script>-->
+    <script src="/js/utils/jquery-1.8.0.min.js"></script>
+    <script src="/js/utils/underscore-min.js"></script>
+    <!-- vexflow    -->
+     <script src="/js/stave/vexflow/header.js"></script>
+    <script src="/js/stave/vexflow/vex.js"></script>
+    <script src="/js/stave/vexflow/flow.js"></script>
+    <script src="/js/stave/vexflow/fraction.js"></script>
+    <script src="/js/stave/vexflow/tables.js"></script>
+    <script src="/js/stave/vexflow/fonts/vexflow_font.js"></script>
+    <script src="/js/stave/vexflow/glyph.js"></script>
+    <script src="/js/stave/vexflow/stave.js"></script>
+    <script src="/js/stave/vexflow/staveconnector.js"></script>
+    <script src="/js/stave/vexflow/tabstave.js"></script>
+    <script src="/js/stave/vexflow/tickcontext.js"></script>
+    <script src="/js/stave/vexflow/tickable.js"></script>
+    <script src="/js/stave/vexflow/note.js"></script>
+    <script src="/js/stave/vexflow/barnote.js"></script>
+    <script src="/js/stave/vexflow/ghostnote.js"></script>
+    <script src="/js/stave/vexflow/stavenote.js"></script>
+    <script src="/js/stave/vexflow/tabnote.js"></script>
+    <script src="/js/stave/vexflow/beam.js"></script>
+    <script src="/js/stave/vexflow/voice.js"></script>
+    <script src="/js/stave/vexflow/voicegroup.js"></script>
+    <script src="/js/stave/vexflow/modifier.js"></script>
+    <script src="/js/stave/vexflow/modifiercontext.js"></script>
+    <script src="/js/stave/vexflow/accidental.js"></script>
+    <script src="/js/stave/vexflow/dot.js"></script>
+    <script src="/js/stave/vexflow/formatter.js"></script>
+    <script src="/js/stave/vexflow/stavetie.js"></script>
+    <script src="/js/stave/vexflow/tabtie.js"></script>
+    <script src="/js/stave/vexflow/tabslide.js"></script>
+    <script src="/js/stave/vexflow/bend.js"></script>
+    <script src="/js/stave/vexflow/vibrato.js"></script>
+    <script src="/js/stave/vexflow/annotation.js"></script>
+    <script src="/js/stave/vexflow/articulation.js"></script>
+    <script src="/js/stave/vexflow/tuning.js"></script>
+    <script src="/js/stave/vexflow/stavemodifier.js"></script>
+    <script src="/js/stave/vexflow/keysignature.js"></script>
+    <script src="/js/stave/vexflow/timesignature.js"></script>
+    <script src="/js/stave/vexflow/clef.js"></script>
+    <script src="/js/stave/vexflow/music.js"></script>
+    <script src="/js/stave/vexflow/keymanager.js"></script>
+    <script src="/js/stave/vexflow/renderer.js"></script>
+    <script src="/js/stave/vexflow/raphaelcontext.js"></script>
+    <script src="/js/stave/vexflow/stavevolta.js"></script>
+    <script src="/js/stave/vexflow/staverepetition.js"></script>
+    <script src="/js/stave/vexflow/stavebarline.js"></script>
+    <script src="/js/stave/vexflow/stavesection.js"></script>
+    <script src="/js/stave/vexflow/stavehairpin.js"></script>
+    <script src="/js/stave/vexflow/stavetempo.js"></script>
+    <script src="/js/stave/vexflow/tremolo.js"></script>
+    <script src="/js/stave/vexflow/tuplet.js"></script>
+    <script src="/js/stave/vexflow/boundingbox.js"></script>
+    <script src="/js/stave/vexflow/textnote.js"></script>
+    
+    <!-- end vexflow-->
+       <script src="/js/data/collectionHelpers.js"></script>
+
+    <script src="vextab.js"></script>
+    <script src="/js/stave/tabdiv-min.js"></script>
+</head>
+<body id="vextabBody">
+    <div id="vextab-container" style="overflow-y: auto;">
+        <div id="vex-container" class="vex-tabdiv" scale="1.0" editor="true" editor_height="200" editor_width="600">tabstave
+notation=true
+notes :h 0/6 (0/6.2/5)
+
+options space=240</div>
+    </div>
+    <div id="tutorialFlyout" data-win-control="WinJS.UI.Flyout" data-win-options="{width:wide}" aria-label="{Help flyout}">
+        <div id="tutorialContainer"></div>
+    </div>
+    <div id="saveTabFlyout" data-win-control="WinJS.UI.Flyout" aria-label="{Save flyout}">
+            <p>
+                <label for="name">Tab title <br /></label>
+                <span id="nameError" class="error"></span>
+                <input type="text" id="name" />                    
+            </p>
+            <button id="saveButton">Save</button>
+        </div>
+     <div id="customLayoutAppBar" data-win-control="WinJS.UI.AppBar" aria-label="Navigation Bar" data-win-options="{layout:'custom',placement:'bottom', sticky:true}">
+         <header id="appBarHeader" aria-label="Navigation bar" role="vextab">
+             <div id="vextab-commands">
+                 <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'cmdBack', label:'Back', icon:'back', section: 'selection'}"></button>
+                 <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'cmdHome', label:'Home', icon:'home', section: 'selection'}"></button>
+                 <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'cmdSave', label:'Save', icon:'save', section: 'selection',type:'flyout',flyout:select('#saveTabFlyout')}"></button>                
+             </div>
+             <div id="tabdiv">
+                 <div id="vextab"></div>
+                 <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'cmdHelp', label:'Help', icon:'help', section: 'selection',type:'flyout',flyout:select('#tutorialFlyout')}"></button>
+                 <hr data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'appBarSeparator',type:'separator',section:'selection'}" />
+                 <!--<button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'cmdSpace', label:'Space', icon:'back', section: 'selection'}"></button>-->
+                 <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'cmdChord', label:'Chord', icon:'audio', section: 'selection'}"></button>
+                 <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'cmdNewMeasure', label:'New measure', icon:'musicinfo', section: 'selection'}"></button>
+                 <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'cmdNewLine', label:'New line', icon:'list', section: 'selection'}"></button>
+
+             </div>          
+         </header>
+     </div>
+     <div class="progressRingText medium hidden">
+            <progress class="win-ring win-large withText"></progress>
+            <label>Processing..</label>
+     </div>
+</body>
+</html>

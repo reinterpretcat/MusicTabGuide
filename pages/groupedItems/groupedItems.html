@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Grouped Items</title>
+
+    <!-- WinJS references -->
+    <link href="//Microsoft.WinJS.1.0/css/ui-dark.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.1.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.1.0/js/ui.js"></script>
+
+    <link href="/css/default.css" rel="stylesheet" />
+    <link href="/pages/groupedItems/groupedItems.css" rel="stylesheet" />
+    <script src="/pages/groupedItems/groupedItems.js"></script>
+    <script src="/js/lastfm/fetcher.js"></script>
+</head>
+    <body>
+        
+	
+        <!-- These templates are used to display each item in the ListView declared below. -->
+        <div class="headertemplate" data-win-control="WinJS.Binding.Template">
+            <button class="group-header win-type-x-large win-type-interactive" data-win-bind="groupKey: key"
+                    onclick="Application.navigator.pageControl.navigateToGroup(event.srcElement.groupKey)" role="link" tabindex="-1" type="button">
+                <span class="group-title win-type-ellipsis" data-win-bind="textContent: title"></span>
+                <span class="group-chevron"></span>
+            </button>
+        </div>
+        <div class="recentHeaderTemplate" data-win-control="WinJS.Binding.Template">
+            <button class="group-header win-type-x-large win-type-interactive" data-win-bind="groupKey: key"
+                    onclick="" tabindex="-1" type="button">
+                <span class="group-title win-type-ellipsis gold" data-win-bind="textContent: title"></span>
+            </button>
+        </div>
+
+        <div class="itemtemplate" data-win-control="WinJS.Binding.Template">
+            <div class="regularListIconTextItem">
+                <img class="regularListIconTextItem-Image" data-win-bind="src: backgroundImage" />
+                <div class="regularListIconTextItem-Detail">
+                    <h4 data-win-bind="innerText: title"></h4>
+                    <div class="differentRatingColor win-small" data-win-control="WinJS.UI.Rating" data-win-bind="winControl.userRating: rating" data-win-options="{disabled: true}"></div>
+                </div>
+            </div>
+        </div>
+        <div class="tempItemTemplate" data-win-control="WinJS.Binding.Template">
+            <div class="regularListIconTextItem">
+                <img class="tempListIconTextItem-Image" data-win-bind="src: backgroundImage" />
+                <!--<div class="tempListIconTextItem-Detail">
+                        <h4>Add</h4>
+                    </div>-->
+            </div>
+        </div>
+        <div class="recentItemTemplate" data-win-control="WinJS.Binding.Template">
+            <div class="regularListIconTextItem">
+                <img class="regularListIconTextItem-Image" data-win-bind="src: groupImage" />
+                <div class="regularListIconTextItem-Detail">
+                    <h4 data-win-bind="innerText: groupTitle"></h4>
+                    <h4 data-win-bind="innerText: title"></h4>
+                    <div class="differentRatingColor win-small" data-win-control="WinJS.UI.Rating" data-win-bind="winControl.userRating: rating" data-win-options="{disabled: true}"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="itemtemplateLastGroup" data-win-control="WinJS.Binding.Template">
+                 <div class="regularListLastGroup">
+                     <img class="regularListLastGroup-Image" data-win-bind="src: group.backgroundImage" />
+                 </div>
+             </div>-->
+
+        <div class="zoomedOutItemTemplate" data-win-control="WinJS.Binding.Template">
+            <div class="zoomedOutItemContainer" >
+                <img class="zoomeOutItemImage" src="#" data-win-bind="src: groupImage; alt: title" />
+                <h4 class="zoomedOutGroupTitle" data-win-bind="textContent: title; alt: title"> </h4>
+                <div class="zoomedOutItemCount" data-win-bind="textContent: tabsCount;"></div>
+            </div>
+        </div>
+
+
+        <!-- The content that will be loaded and displayed. -->
+        <div class="fragment groupeditemspage">
+            <header aria-label="Header content" role="banner">
+                <button class="win-backbutton" aria-label="Back" disabled type="button"></button>
+                <h1 class="titlearea win-type-ellipsis">
+                    <span class="pagetitle">MusicTab Guide</span>
+                </h1>
+            </header>
+            <!-- <section aria-label="Main content" role="main">
+                     <div class="groupeditemslist win-selectionstylefilled" aria-label="List of groups" data-win-control="WinJS.UI.ListView" data-win-options="{ selectionMode: 'none' }"></div>
+                 </section>-->
+            <section aria-label="Main content" role="main">
+                <div id="zoom" data-win-control="WinJS.UI.SemanticZoom" data-win-options="{ initiallyZoomedOut: false }" style="height: 100%">
+                    <div id="zoomedInListView" class="groupeditemslist" aria-label="List of groups" data-win-control="WinJS.UI.ListView" data-win-options="{ selectionMode: 'none'}"></div>
+                    <div id="zoomedOutListView" class="groupeditemslist" aria-label="List of groups" data-win-control="WinJS.UI.ListView" data-win-options="{ selectionMode: 'none'}"></div>
+                </div>
+            </section>
+
+        </div>
+        <div id="addGroupFlyout" data-win-control="WinJS.UI.Flyout" aria-label="{Add flyout}">
+            <p>
+                <label for="name">Group title <br /></label>
+                <span id="nameError" class="error"></span>
+                <input type="text" id="name" />                    
+            </p>
+            <button id="submitGroupButton">Add</button>
+        </div>
+        <div id="appBar" data-win-control="WinJS.UI.AppBar">
+            <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'cmdAdd',label:'Add',icon:'add',section:'selection',extraClass:'singleSelect',tooltip:'Add group',type:'flyout',flyout:select('#addGroupFlyout')}"></button>
+            <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'cmdBrowse', label:'Browse', icon:'openfile', section: 'selection',tooltip:'Browse tabs'}"></button>
+            <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'cmdGoToScales', label:'Scales', icon:'musicinfo', section: 'global',tooltip:'Scales'}"></button>
+            <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'cmdGoToChords', label:'Chords', icon:'audio', section: 'global',tooltip:'Chords diagrams'}"></button>
+            <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'cmdGoToFret', label:'Fret', icon:'musicinfo', section: 'global',tooltip:'Fret trainer'}"></button>
+            <!--<button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'cmdImport', label:'Import', icon:'openfile', section: 'global'}"></button>-->
+        </div>
+    </body>
+</html>

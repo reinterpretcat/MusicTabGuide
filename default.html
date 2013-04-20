@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>MusicTab</title>
+
+    <!-- WinJS references -->
+    <link href="//Microsoft.WinJS.1.0/css/ui-dark.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.1.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.1.0/js/ui.js"></script>
+    
+   <link href="/css/default.css" rel="stylesheet" />
+    <!--  utils -->
+    <script src="/js/utils/navigator.js"></script>
+    <script src="/js/utils/utils.js"></script>
+    <script src="/js/utils/helpers.js"></script>
+
+    <!-- data --> 
+    <script src="/js/data/db.js"></script>
+    <script src="/js/data/init.js"></script>
+
+    <script src="/js/default.js"></script>
+    <script src="/pages/search/search.js"></script>
+    
+</head>
+    <body>
+        <style type="text/css">body {background-image: url("/images/Background.png");background-size:cover;  background-position: center; background-repeat: no-repeat; background-attachment: fixed; }</style>
+        <div id="contenthost" data-win-control="Application.PageControlNavigator" data-win-options="{home: '/pages/groupedItems/groupedItems.html'}"></div>
+    </body>
+</html>

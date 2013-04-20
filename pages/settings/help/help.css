@@ -1,0 +1,48 @@
+﻿.help p {
+    margin-left: 120px;
+}
+
+.SettingsPane {
+    margin-top:36px;
+    margin-left:48px;
+}
+
+.SettingsTitle {
+    margin-left: 36px;
+}
+
+.SettingsContent {
+     margin-top: 24px;
+}
+
+#help {
+      background-color: gray ; 
+}
+
+#topics a {
+    color: white;
+    font-size: 20px;
+}
+
+#topics a:link {background-color:#B2FF99;}
+#topics a:visited {background-color:#FFFF85;}
+#topics a:hover {background-color:rgba(0,0,0,0.65);}
+#topics a:active {background-color:rgba(0,0,0,0.35);}
+
+#topics {
+    color: rgba(0,0,0,0.65);
+   list-style-type:square;
+   
+}
+#topics li{
+    margin-bottom: 8px;
+}
+
+
+#back {
+    width: 80%;
+    margin: 10px;
+}
+#fragment {
+   /* overflow-y: visible;*/
+}

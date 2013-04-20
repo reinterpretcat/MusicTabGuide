@@ -1,0 +1,112 @@
+﻿
+<!DOCTYPE html>
+<html lang="en-gb">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+        <meta charset="UTF-8" />
+            <!-- WinJS references -->
+        <link href="//Microsoft.WinJS.1.0/css/ui-dark.css" rel="stylesheet" />
+        <script src="//Microsoft.WinJS.1.0/js/base.js"></script>
+        <script src="//Microsoft.WinJS.1.0/js/ui.js"></script>
+        <link href="/css/default.css" rel="stylesheet" />
+        <link rel="stylesheet" type="text/css" href="guitar.css" />
+        <script type="text/javascript" src="guitar.js"></script>
+        <script type="text/javascript" src="guitar_trainer.js"></script>
+        <script type="text/javascript" src="fretTrainer.js"></script>
+        <title>Guitar Fret Trainer</title>
+    </head>
+    <body>
+        <div class="fragment">
+            <header aria-label="Header content" role="banner">
+                <button class="win-backbutton" aria-label="Back" disabled type="button"></button>
+                <h1 class="titlearea win-type-ellipsis">
+                    <span class="pagetitle">Guitar Fret Trainer</span>
+                </h1>
+            </header>
+            <section aria-label="Main content" role="main">
+                <div>
+                    <table id="eww_layout">
+                        <tbody id="sections_container">
+                            <tr id="header">
+                                <td class="right">
+                                    <div id="score_box">
+                                        <span id="score_label" class="label">Score:</span>
+                                        <span id="score" class="instruction">0/0 0%</span>
+                                    </div><!-- score_box -->
+                                </td></tr>
+                            <tr class="right">
+                                <td id="spec_row" colspan=2>
+                                    <div id="spec">
+                                        <span class="label">String:</span>
+                                        <span id="string" class="instruction">&nbsp;</span>
+                                        <span id= "note_label" class="label">Note:</span>
+                                        <span id="note" class="instruction"></span>
+                                    </div><!-- spec -->
+                                </td>
+                            </tr>
+                            <tr class="hidden">
+                                <td colspan=2>
+                                    <canvas id="fretboard" unselectable="on">
+                                        Requires a browser that can support an HTML5 Canvas.
+                                    </canvas>
+                                </td>
+                            </tr>
+                             <tr class="hidden">
+                                <td id="instructions_row">
+                                    <div id="instructions">
+                                        <div class="new_notes">
+                                            Learn the highlighted notes. Press <button id="play">Start</button>
+                                            when you're ready to begin.
+                                        </div><!-- new_notes -->
+                                        <div class="playing">
+                                            Click on this note on the highlighted string.
+                                        </div><!-- new_notes -->
+                                    </div><!-- instructions -->
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div><!-- global_inner -->
+                
+
+            </section>
+        </div>
+        <div id="settingsFlyout" data-win-control="WinJS.UI.Flyout" aria-label="{Settings flyout}">
+                <div id="soundToggle" class="settings" data-win-control="WinJS.UI.ToggleSwitch"
+                    data-win-options="{title: 'Sound', checked: true}">
+                </div>
+            <div id="accidentalsToggle" class="settings" data-win-control="WinJS.UI.ToggleSwitch"
+                 data-win-options="{title: 'Accidentals', checked: false}">
+            </div>
+             <div id="hideNote" class="settings" data-win-control="WinJS.UI.ToggleSwitch"
+                 data-win-options="{title: 'Hide note', checked: false}">
+            </div>
+            <div class="right">
+                  <label >Fret orientation<br /> </label>
+                <select id="handed" class="settings">
+                    <option selected="selected">Right Handed</option>
+                    <option>Left Handed</option>
+                </select>
+            </div>
+            <div class="right">
+                <label >Learned strings<br /> </label>
+                <select id="stringsProgress" class="settings">
+                    <option selected="selected">Progress</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                </select>
+            </div>
+            <div class="right">
+                <button class="settings" id="resetProgressButton">Reset progress</button>
+            </div>
+          
+        </div>
+        <div id="appBar" data-win-control="WinJS.UI.AppBar">
+            <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'cmdSettings', label:'Settings', icon:'settings', section: 'global',extraClass:'singleSelect',tooltip:'Settings',type:'flyout',flyout:select('#settingsFlyout')}"></button>   
+        </div>
+    </body>
+</html>

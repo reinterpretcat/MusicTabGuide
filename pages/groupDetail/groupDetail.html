@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Group Detail</title>
+
+    <!-- WinJS references -->
+    <link href="//Microsoft.WinJS.1.0/css/ui-dark.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.1.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.1.0/js/ui.js"></script>
+
+    <link href="/css/default.css" rel="stylesheet" />
+    <link href="/pages/groupDetail/groupDetail.css" rel="stylesheet" />
+    <script src="/js/lastfm/fetcher.js"></script>
+    <script src="/pages/groupDetail/groupDetail.js"></script>
+</head>
+<body>
+    <!-- These templates are used to display each item in the ListView declared below. -->
+    <div class="headertemplate" data-win-control="WinJS.Binding.Template">        
+        <img class="group-image" src="#" data-win-bind="src: backgroundImage; alt: title" />
+        <h4 class="group-description" data-win-bind="innerHTML: description"></h4>
+    </div>
+    <div class="itemtemplate" data-win-control="WinJS.Binding.Template">
+        <div class="item">
+            <img class="item-image" src="#" data-win-bind="src: backgroundImage; alt: title" />
+            <div class="item-info">
+                <h4 class="item-title" data-win-bind="textContent: title"></h4>                
+                <h4 class="item-subtitle"><span data-win-bind="textContent: added"></span> </h4>
+                <div class="differentRatingColor ratings win-interactive" data-win-control="WinJS.UI.Rating" data-win-bind="winControl.userRating: rating; winControl.itemId: id"  data-win-options="{onchange: MusicTab.Ratings.change}"></div>
+            </div>
+        </div>
+    </div>
+     <div class="tempItemTemplate" data-win-control="WinJS.Binding.Template">
+        <div class="item" >
+         <img class="tempIconTextItem-Image" data-win-bind="src: backgroundImage" />
+             <div class="tempIconTextItem-Detail">
+                 Browse..
+             </div>
+        </div>
+    </div>
+
+    <!-- The content that will be loaded and displayed. -->
+    <div class="groupdetailpage fragment">
+        <header aria-label="Header content" role="banner">
+            <button class="win-backbutton" aria-label="Back" disabled type="button"></button>
+            <h1 class="titlearea win-type-ellipsis">
+                <span class="pagetitle"></span>
+            </h1>
+        </header>
+        <section aria-label="Main content" role="main">
+            <div id="listView" class="itemslist win-selectionstylefilled" aria-label="List of this group's items" data-win-control="WinJS.UI.ListView" data-win-options="{selectionMode: 'multi', tapBehavior: 'toggleSelect', swipeBehavior: 'select'}"></div>
+        </section>
+    </div>
+    <div id="editFlyout" data-win-control="WinJS.UI.Flyout" aria-label="{Edit flyout}">
+        <form onsubmit="return false;">
+            <p>
+                <label for="name">Group title <br /></label>
+                <span id="nameError" class="error"></span>
+                <input type="text" id="name" />                    
+            </p>
+            <p>
+                <label for="shortTitle">Short title<br /></label>                    
+                <span id="shortTitleError" class="error"></span>
+                <input type="text" id="shortTitle" />                    
+            </p>
+            <p>
+                <button class="action" id="chooseImage">Pick image</button>
+                <br/>
+            </p>
+            <p>
+                <label for="description">Description<br /></label>                    
+                <span id="descriptionError" class="error"></span>
+                <textarea id="description"></textarea>                    
+            </p>
+
+            <button id="submitEditButton">Save</button>
+        </form>
+    </div>
+    <div id="tabEditFlyout" data-win-control="WinJS.UI.Flyout" aria-label="{Edit flyout}">
+        <form onsubmit="return false;">
+            <p>
+                <label for="tabTitle">Type new name <br /></label>
+                <span id="tabTitleError" class="error"></span>
+                <input type="text" id="tabTitle" />                    
+            </p>
+            <button id="submitTabEditButton">Save</button>
+        </form>
+    </div>
+    <!-- Define the delete confirmation -->
+    <div id="deleteFlyout" data-win-control="WinJS.UI.Flyout" aria-label="{Confirm delete flyout}">
+        <div>If you delete selected tabs they cannot be recovered.</div>
+        <button id="confirmDeleteButton">Delete Tabs</button>
+    </div>
+    <div id="appBar" data-win-control="WinJS.UI.AppBar">
+        <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'cmdGo',label:'View',icon:'go',section:'selection',extraClass:'multiSelect',tooltip:'View tab'}"></button>
+        <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'cmdTabEdit',label:'Rename',icon:'rename',section:'selection',extraClass:'multiSelect',type:'flyout',flyout:select('#tabEditFlyout')}"></button>
+        <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'cmdDelete',label:'Delete',icon:'delete',section:'selection',extraClass:'multiSelect',type:'flyout',flyout:select('#deleteFlyout')}"></button>
+        <hr data-win-control="WinJS.UI.AppBarCommand" data-win-options="{type:'separator',section:'selection',extraClass:'multiSelect'}" />
+        <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'cmdSelectAll',label:'Select All',icon:'selectall',section:'selection',extraClass:'multiSelect',tooltip:'Select All'}"></button>
+        <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'cmdClearSelection',label:'Clear Selection',icon:'clearselection',section:'selection',extraClass:'multiSelect',tooltip:'Clear Selection'}"></button>
+        
+        <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'cmdSearchTabs',label:'Search tabs',icon:'find',section:'global',extraClass:'singleSelect',tooltip:'Search and download tabs'}"></button>
+        <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'cmdLastfmUpdate',label:'Search info',icon:'musicinfo',section:'global',extraClass:'singleSelect',tooltip:'Get lastfm info'}"></button>
+        <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'cmdEdit',label:'Edit group',icon:'edit',section:'global',extraClass:'singleSelect',tooltip:'Edit group details',type:'flyout',flyout:select('#editFlyout')}"></button>
+        <hr data-win-control="WinJS.UI.AppBarCommand" data-win-options="{type:'separator',section:'global',extraClass:'singleSelect'}" />
+        <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'cmdNew',label:'New',icon:'document',section:'global',extraClass:'singleSelect',tooltip:'New tab'}"></button>
+        <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'cmdAdd',label:'Add',icon:'add',section:'global',extraClass:'singleSelect',tooltip:'Add tab'}"></button>
+    </div>
+</body>
+</html>

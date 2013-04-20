@@ -1,0 +1,103 @@
+﻿/*
+THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
+ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO
+THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
+PARTICULAR PURPOSE.
+
+Copyright (c) Microsoft Corporation. All rights reserved
+*/
+
+/* styles */
+#s3-content-source {
+    -ms-flow-into: content3;
+}
+
+#s3-flexbox {
+    display: -ms-flexbox;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -ms-scroll-snap-type: mandatory;
+    -ms-scroll-snap-points-x: snapInterval(0%, 100%);
+    width: 100%;
+    height: 100%;
+}
+
+.s3-container {
+    -ms-flow-from: content3;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    width: 100%;
+    height: 100%;
+}
+
+progress.withText
+{
+    color: inherit; /* to use the same text color as the page */
+    vertical-align: text-bottom; /* to pull the control down so that the bottom of the control align with the bottom of its label */
+}
+
+/* text style when put as the label for progress ring */
+.progressRingText
+{
+    font-family: "Segoe UI";
+}
+
+/* text style when put as the label a default size progress ring */
+.progressRingText
+{
+    font-size: 11pt;
+    line-height: 15pt;
+    position:absolute;
+    left:40%;
+    top:40%;
+}
+
+/* the margin to separate the ring and its label */
+.progressRingText progress
+{
+    margin-right: 5px;
+}
+
+/* text style when put as the label for a medium size progress ring */
+.progressRingText.medium
+{
+    font-size: 20pt;
+    line-height: 24pt;
+}
+
+.progressRingText.medium progress
+{
+    margin-right: 10px;
+}
+
+.hidden {
+    display:none;
+}
+
+.vex-title {
+    background: #eed;
+    width:100%;
+    height:100%;
+    color:black;
+    text-align:center;
+    font-family: "Segoe UI";
+}
+.vex-title-inner {
+        margin-top: 15%;
+}
+
+.vex-title-inner h1 {
+    font-size:60pt;
+}
+
+.vex-title-inner h2 {
+    font-size:40pt;
+}
+
+.vex-title-inner h3 {
+    font-size:30pt;
+}
+
+/* for scrolling*/
+.current {
+}

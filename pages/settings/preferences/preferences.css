@@ -1,0 +1,32 @@
+﻿.Preferences p {
+    margin-left: 120px;
+}
+
+.SettingsPane {
+    margin-top:36px;
+    margin-left:48px;
+}
+
+.SettingsTitle {
+    margin-left: 36px;
+}
+
+.SettingsContent {
+     margin-top: 24px;
+}
+
+#preferences {
+     background-color: gray; 
+}
+
+input[type="range"].customTickMarkPosition::-ms-track
+{
+    /* tick marks are hidden by default with color: transparent, here give tick marks the same color as page background to get the cut-through effect */
+    color: rgb(255, 255, 255);
+}
+
+.ui-dark input[type="range"].customTickMarkPosition::-ms-track
+{
+    /* keep the same as page background color */
+    color: rgb(29, 29, 29);
+}

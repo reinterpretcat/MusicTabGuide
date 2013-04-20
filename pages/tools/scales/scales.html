@@ -1,0 +1,131 @@
+﻿
+<!DOCTYPE html>
+<html lang="en-gb">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+        <meta charset="UTF-8" />
+        <link href="//Microsoft.WinJS.1.0/css/ui-dark.css" rel="stylesheet" />
+        <script src="//Microsoft.WinJS.1.0/js/base.js"></script>
+        <script src="//Microsoft.WinJS.1.0/js/ui.js"></script>
+        
+        <link href="/css/default.css" rel="stylesheet" />
+        
+        
+         <link href="/css/tabdiv.css" rel="stylesheet" />
+    <link href="vextab.css" rel="stylesheet" />
+    <!--<script src="vexflow-min.js"></script>-->
+    <script src="/js/utils/jquery-1.8.0.min.js"></script>
+    <script src="/js/utils/underscore-min.js"></script>
+    <!-- vexflow    -->
+     <script src="/js/stave/vexflow/header.js"></script>
+    <script src="/js/stave/vexflow/vex.js"></script>
+    <script src="/js/stave/vexflow/flow.js"></script>
+    <script src="/js/stave/vexflow/fraction.js"></script>
+    <script src="/js/stave/vexflow/tables.js"></script>
+    <script src="/js/stave/vexflow/fonts/vexflow_font.js"></script>
+    <script src="/js/stave/vexflow/glyph.js"></script>
+    <script src="/js/stave/vexflow/stave.js"></script>
+    <script src="/js/stave/vexflow/staveconnector.js"></script>
+    <script src="/js/stave/vexflow/tabstave.js"></script>
+    <script src="/js/stave/vexflow/tickcontext.js"></script>
+    <script src="/js/stave/vexflow/tickable.js"></script>
+    <script src="/js/stave/vexflow/note.js"></script>
+    <script src="/js/stave/vexflow/barnote.js"></script>
+    <script src="/js/stave/vexflow/ghostnote.js"></script>
+    <script src="/js/stave/vexflow/stavenote.js"></script>
+    <script src="/js/stave/vexflow/tabnote.js"></script>
+    <script src="/js/stave/vexflow/beam.js"></script>
+    <script src="/js/stave/vexflow/voice.js"></script>
+    <script src="/js/stave/vexflow/voicegroup.js"></script>
+    <script src="/js/stave/vexflow/modifier.js"></script>
+    <script src="/js/stave/vexflow/modifiercontext.js"></script>
+    <script src="/js/stave/vexflow/accidental.js"></script>
+    <script src="/js/stave/vexflow/dot.js"></script>
+    <script src="/js/stave/vexflow/formatter.js"></script>
+    <script src="/js/stave/vexflow/stavetie.js"></script>
+    <script src="/js/stave/vexflow/tabtie.js"></script>
+    <script src="/js/stave/vexflow/tabslide.js"></script>
+    <script src="/js/stave/vexflow/bend.js"></script>
+    <script src="/js/stave/vexflow/vibrato.js"></script>
+    <script src="/js/stave/vexflow/annotation.js"></script>
+    <script src="/js/stave/vexflow/articulation.js"></script>
+    <script src="/js/stave/vexflow/tuning.js"></script>
+    <script src="/js/stave/vexflow/stavemodifier.js"></script>
+    <script src="/js/stave/vexflow/keysignature.js"></script>
+    <script src="/js/stave/vexflow/timesignature.js"></script>
+    <script src="/js/stave/vexflow/clef.js"></script>
+    <script src="/js/stave/vexflow/music.js"></script>
+    <script src="/js/stave/vexflow/keymanager.js"></script>
+    <script src="/js/stave/vexflow/renderer.js"></script>
+    <script src="/js/stave/vexflow/raphaelcontext.js"></script>
+    <script src="/js/stave/vexflow/stavevolta.js"></script>
+    <script src="/js/stave/vexflow/staverepetition.js"></script>
+    <script src="/js/stave/vexflow/stavebarline.js"></script>
+    <script src="/js/stave/vexflow/stavesection.js"></script>
+    <script src="/js/stave/vexflow/stavehairpin.js"></script>
+    <script src="/js/stave/vexflow/stavetempo.js"></script>
+    <script src="/js/stave/vexflow/tremolo.js"></script>
+    <script src="/js/stave/vexflow/tuplet.js"></script>
+    <script src="/js/stave/vexflow/boundingbox.js"></script>
+    <script src="/js/stave/vexflow/textnote.js"></script>
+    
+    <!-- end vexflow-->
+    <script src="/js/stave/tabdiv-min.js"></script>
+        
+
+        <link rel="stylesheet" type="text/css" href="scales.css" />
+        <link rel="stylesheet" type="text/css" href="/pages/tools/fretTrainer/guitar.css" />
+        <script type="text/javascript" src="/pages/tools/fretTrainer/guitar.js"></script>
+		<script type="text/javascript" src="guitar_schemas.js"></script>
+        <script type="text/javascript" src="scales.js"></script>
+        <title>Guitar Fret Trainer</title>
+    </head>
+    <body>
+        <div class="fragment">
+            <header aria-label="Header content" role="banner">
+                <button class="win-backbutton" aria-label="Back" disabled type="button"></button>
+                <h1 class="titlearea win-type-ellipsis">
+                    <span class="pagetitle">Scales</span>
+                </h1>
+                <div id="selectBox">
+                       <select id="scaleSelect">
+                    <option value="0">scales</option>
+                    <option value="1">triad</option>
+                </select>
+                <select id="typeSelect">
+                    <option value="0">major</option>
+                    <option value="1">minor</option>
+                </select>
+                    <select id="schemaSelect">
+                    <option value="0">mode 1</option>
+                    <option value="1">mode 2</option>
+                </select>
+                </div>
+              
+            </header>
+            <section aria-label="Main content" role="main">
+                <div>
+                    <table id="eww_layout">
+                        <tbody id="sections_container">
+                             <tr>
+                                 <td>
+                                     <div id="container" style="overflow-y: auto;">
+                                        <div id="vex-container" class="vex-tabdiv"></div>
+                                     </div>
+                                 </td>
+                            </tr>
+                            <tr>
+                                <td colspan=2>
+                                    <canvas id="fretboard" unselectable="on">
+                                        Requires a browser that can support an HTML5 Canvas.
+                                    </canvas>
+                                </td>
+                            </tr>
+                       
+                        </tbody>
+                    </table>
+                </div><!-- global_inner -->
+            </section>
+        </div>
+    </body>
+</html>

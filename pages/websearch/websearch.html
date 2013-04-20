@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <link href="//Microsoft.WinJS.1.0/css/ui-dark.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.1.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.1.0/js/ui.js"></script>
+    
+    <link href="/css/default.css" rel="stylesheet" />
+    <link href="/css/toolbar.css" rel="stylesheet" />
+    <link href='websearch.css' rel='stylesheet' type='text/css'>
+    <script src="/js/utils/jquery-1.8.0.min.js"></script>
+    <script src="/js/utils/jszip.js"></script>
+    <script src="/js/utils/jszip-deflate.js"></script>
+    <script src="/js/websearch/websearch.js"></script>
+    <script src="websearch.js"></script>
+</head>
+
+    <body>
+        <div class="headertemplate" data-win-control="WinJS.Binding.Template">                
+        </div>
+        <div class="itemtemplate" data-win-control="WinJS.Binding.Template">
+            <div class="item">
+                <div class="item-image" >&#xe118;</div>
+                <div class="item-info">
+                    <h4 class="item-title" data-win-bind="textContent: name"></h4>                
+                    <h4 class="item-subtitle"><span data-win-bind="textContent: artist"></span> </h4>
+                    <div class="differentRatingColor win-small" data-win-control="WinJS.UI.Rating" data-win-bind="winControl.userRating: rating"></div>
+                </div>
+            </div>
+        </div>
+
+         <div class="websearchpage fragment">
+             <header aria-label="Header content" role="banner">
+                 <button class="win-backbutton" aria-label="Back" disabled type="button"></button>
+                 <h1 class="titlearea win-type-ellipsis">
+                     <span class="pagetitle">Download</span>
+                 </h1>
+                 <div class="websearch">
+                     <div class="toolbar">
+                         <input id="query" type="text" />
+                         <button class="big">&#xe11a;</button>
+                     </div>
+                 </div>
+             </header>
+            <section aria-label="Main content" role="main">
+                <div class="noresults win-type-x-large">No results match your search or service is unavailable.</div>
+                 <div class="progressContainer">
+                    <progress class="progress hidden"></progress>
+                </div>
+                <div class="itemslist win-selectionstylefilled" aria-label="List of this group's items" data-win-control="WinJS.UI.ListView" data-win-options="{selectionMode: 'multi', tapBehavior: 'toggleSelect', swipeBehavior: 'select', loadingBehavior: 'incremental'}"></div>
+            </section>
+        </div>
+
+        <div id="appBar" data-win-control="WinJS.UI.AppBar">
+            <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'cmdDownload',label:'Download',icon:'download',section:'selection',extraClass:'multiSelect',tooltip:'Download selected'}"></button>
+            <hr data-win-control="WinJS.UI.AppBarCommand" data-win-options="{type:'separator',section:'selection',extraClass:'multiSelect'}" />
+            <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'cmdSelectAll',label:'Select All',icon:'selectall',section:'selection',extraClass:'multiSelect',tooltip:'Select all'}"></button>
+            <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'cmdClearSelection',label:'Clear Selection',icon:'clearselection',section:'selection',extraClass:'multiSelect',tooltip:'Clear selection'}"></button>
+        
+            <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'cmdPrevious',label:'Previous',icon:'previous',section:'global',extraClass:'singleSelect',tooltip:'Previous results'}"></button>
+            <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'cmdNext',label:'Next',icon:'next',section:'global',extraClass:'singleSelect',tooltip:'Next results'}"></button>
+        </div>
+      
+    </body>
+</html>

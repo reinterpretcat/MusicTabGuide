@@ -1,0 +1,298 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|AnyCPU">
+      <Configuration>Debug</Configuration>
+      <Platform>AnyCPU</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|ARM">
+      <Configuration>Debug</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x86">
+      <Configuration>Debug</Configuration>
+      <Platform>x86</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|AnyCPU">
+      <Configuration>Release</Configuration>
+      <Platform>AnyCPU</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|ARM">
+      <Configuration>Release</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x86">
+      <Configuration>Release</Configuration>
+      <Platform>x86</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>d196a5ae-e4f2-4751-b92d-e3ac373e5ee3</ProjectGuid>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '11.0'">
+    <VisualStudioVersion>11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\$(WMSJSProjectDirectory)\Microsoft.VisualStudio.$(WMSJSProject).Default.props" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\$(WMSJSProjectDirectory)\Microsoft.VisualStudio.$(WMSJSProject).props" />
+  <PropertyGroup>
+    <TargetPlatformIdentifier>Windows</TargetPlatformIdentifier>
+    <TargetPlatformVersion>8.0</TargetPlatformVersion>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <PackageCertificateKeyFile>MusicTab_StoreKey.pfx</PackageCertificateKeyFile>
+    <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
+    <PackageCertificateThumbprint>F78EAFB901B42FE38BF5B373183660FC3183E8A9</PackageCertificateThumbprint>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppxManifest Include="package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+    <Content Include="css\tabdiv.css" />
+    <Content Include="css\tile.css" />
+    <Content Include="css\toolbar.css" />
+    <Content Include="data\data.json" />
+    <Content Include="data\Metallica - Fade to Black.gp3" />
+    <Content Include="data\Metallica - Master of Puppets.gp3" />
+    <Content Include="data\Opeth - Harvest.gpx" />
+    <Content Include="data\Temp.gpx" />
+    <Content Include="default.html" />
+    <Content Include="css\default.css" />
+    <Content Include="images\actions\add.png" />
+    <Content Include="images\background.png" />
+    <Content Include="images\groups\group_detail.png" />
+    <Content Include="images\groups\group_view.png" />
+    <Content Include="images\items\guitarpro3.png" />
+    <Content Include="images\items\guitarpro4.png" />
+    <Content Include="images\items\guitarpro5.png" />
+    <Content Include="images\items\guitarproj.png" />
+    <Content Include="images\items\guitarprox.png" />
+    <Content Include="images\items\text.png" />
+    <Content Include="images\items\musicxml.png" />
+    <Content Include="images\logo.png" />
+    <Content Include="images\smalllogo.png" />
+    <Content Include="images\splashscreen.png" />
+    <Content Include="images\storelogo.png" />
+    <Content Include="images\WideLogo.png" />
+    <Content Include="js\chords\chordLibrary.js" />
+    <Content Include="js\chords\raphael-min.js" />
+    <Content Include="js\data\collectionHelpers.js" />
+    <Content Include="js\data\db.js" />
+    <Content Include="js\data\init.js" />
+    <Content Include="js\default.js" />
+    <Content Include="js\lastfm\fetcher.js" />
+    <Content Include="js\stave\staveEx.js" />
+    <Content Include="js\stave\staveHelpers.js" />
+    <Content Include="js\stave\tabdiv-min.js" />
+    <Content Include="js\stave\tabRestNote.js" />
+    <Content Include="js\stave\vexflow\accidental.js" />
+    <Content Include="js\stave\vexflow\annotation.js" />
+    <Content Include="js\stave\vexflow\articulation.js" />
+    <Content Include="js\stave\vexflow\barnote.js" />
+    <Content Include="js\stave\vexflow\beam.js" />
+    <Content Include="js\stave\vexflow\bend.js" />
+    <Content Include="js\stave\vexflow\boundingbox.js" />
+    <Content Include="js\stave\vexflow\clef.js" />
+    <Content Include="js\stave\vexflow\dot.js" />
+    <Content Include="js\stave\vexflow\flow.js" />
+    <Content Include="js\stave\vexflow\fonts\gonville.js" />
+    <Content Include="js\stave\vexflow\fonts\gonville_all.js" />
+    <Content Include="js\stave\vexflow\fonts\gonville_original.js" />
+    <Content Include="js\stave\vexflow\fonts\vexflow_font.js" />
+    <Content Include="js\stave\vexflow\formatter.js" />
+    <Content Include="js\stave\vexflow\fraction.js" />
+    <Content Include="js\stave\vexflow\ghostnote.js" />
+    <Content Include="js\stave\vexflow\glyph.js" />
+    <Content Include="js\stave\vexflow\header.js" />
+    <Content Include="js\stave\vexflow\keymanager.js" />
+    <Content Include="js\stave\vexflow\keysignature.js" />
+    <Content Include="js\stave\vexflow\modifier.js" />
+    <Content Include="js\stave\vexflow\modifiercontext.js" />
+    <Content Include="js\stave\vexflow\music.js" />
+    <Content Include="js\stave\vexflow\note.js" />
+    <Content Include="js\stave\vexflow\raphaelcontext.js" />
+    <Content Include="js\stave\vexflow\renderer.js" />
+    <Content Include="js\stave\vexflow\stave.js" />
+    <Content Include="js\stave\vexflow\stavebarline.js" />
+    <Content Include="js\stave\vexflow\staveconnector.js" />
+    <Content Include="js\stave\vexflow\stavehairpin.js" />
+    <Content Include="js\stave\vexflow\stavemodifier.js" />
+    <Content Include="js\stave\vexflow\stavenote.js" />
+    <Content Include="js\stave\vexflow\staverepetition.js" />
+    <Content Include="js\stave\vexflow\stavesection.js" />
+    <Content Include="js\stave\vexflow\stavetempo.js" />
+    <Content Include="js\stave\vexflow\stavetie.js" />
+    <Content Include="js\stave\vexflow\stavevolta.js" />
+    <Content Include="js\stave\vexflow\tables.js" />
+    <Content Include="js\stave\vexflow\tabnote.js" />
+    <Content Include="js\stave\vexflow\tabslide.js" />
+    <Content Include="js\stave\vexflow\tabstave.js" />
+    <Content Include="js\stave\vexflow\tabtie.js" />
+    <Content Include="js\stave\vexflow\textnote.js" />
+    <Content Include="js\stave\vexflow\tickable.js" />
+    <Content Include="js\stave\vexflow\tickcontext.js" />
+    <Content Include="js\stave\vexflow\timesignature.js" />
+    <Content Include="js\stave\vexflow\tremolo.js" />
+    <Content Include="js\stave\vexflow\tuning.js" />
+    <Content Include="js\stave\vexflow\tuplet.js" />
+    <Content Include="js\stave\vexflow\vex.js" />
+    <Content Include="js\stave\vexflow\vibrato.js" />
+    <Content Include="js\stave\vexflow\voice.js" />
+    <Content Include="js\stave\vexflow\voicegroup.js" />
+    <Content Include="js\tablatures\alphaTab.js" />
+    <Content Include="js\tablatures\alphaTabTransformer.js" />
+    <Content Include="js\tablatures\tabFactory.js" />
+    <Content Include="js\tablatures\track.js" />
+    <Content Include="js\tablatures\transformerHelpers.js" />
+    <Content Include="js\tablatures\ugTabTransformer.js" />
+    <Content Include="js\utils\helpers.js" />
+    <Content Include="js\utils\jquery-1.8.0.min.js" />
+    <Content Include="js\utils\jquery.scrollTo-1.4.2-min.js" />
+    <Content Include="js\utils\jszip-deflate.js" />
+    <Content Include="js\utils\jszip-inflate.js" />
+    <Content Include="js\utils\jszip-load.js" />
+    <Content Include="js\utils\jszip.js" />
+    <Content Include="js\utils\navigator.js" />
+    <Content Include="js\utils\underscore-min.js" />
+    <Content Include="js\utils\utils.js" />
+    <Content Include="js\websearch\websearch.js" />
+    <Content Include="pages\settings\about\about.css" />
+    <Content Include="pages\settings\about\about.html" />
+    <Content Include="pages\settings\about\about.js" />
+    <Content Include="pages\settings\help\help.css" />
+    <Content Include="pages\settings\help\help.html" />
+    <Content Include="pages\settings\help\help.js" />
+    <Content Include="pages\settings\help\topics\list.html" />
+    <Content Include="pages\settings\help\topics\topic17.html" />
+    <Content Include="pages\settings\help\topics\topic16.html" />
+    <Content Include="pages\settings\help\topics\topic15.html" />
+    <Content Include="pages\settings\help\topics\topic14.html" />
+    <Content Include="pages\settings\help\topics\topic13.html" />
+    <Content Include="pages\settings\help\topics\topic12.html" />
+    <Content Include="pages\settings\help\topics\topic2.html" />
+    <Content Include="pages\settings\help\topics\topic11.html" />
+    <Content Include="pages\settings\help\topics\topic10.html" />
+    <Content Include="pages\settings\help\topics\topic9.html" />
+    <Content Include="pages\settings\help\topics\topic8.html" />
+    <Content Include="pages\settings\help\topics\topic7.html" />
+    <Content Include="pages\settings\help\topics\topic6.html" />
+    <Content Include="pages\settings\help\topics\topic4.html" />
+    <Content Include="pages\settings\help\topics\topic5.html" />
+    <Content Include="pages\settings\help\topics\topic3.html" />
+    <Content Include="pages\settings\help\topics\topic1.html" />
+    <Content Include="pages\tools\chords\chart.js" />
+    <Content Include="pages\tools\chords\chords.css" />
+    <Content Include="pages\tools\chords\chords.html" />
+    <Content Include="pages\tools\chords\chords.js" />
+    <Content Include="pages\tools\fretTrainer\fretTrainer.html" />
+    <Content Include="pages\tools\fretTrainer\fretTrainer.js" />
+    <Content Include="pages\tools\fretTrainer\guitar.css" />
+    <Content Include="pages\tools\fretTrainer\guitar.js" />
+    <Content Include="pages\tools\fretTrainer\guitar_trainer.js" />
+    <Content Include="pages\tools\scales\scales.css" />
+    <Content Include="pages\tools\scales\scales.js" />
+    <Content Include="pages\tools\scales\scales.html" />
+    <Content Include="pages\tools\scales\guitar_schemas.js" />
+    <Content Include="pages\vextab\lined.css" />
+    <Content Include="pages\vextab\lined.js" />
+    <Content Include="pages\vextab\tutorial.css" />
+    <Content Include="pages\vextab\tutorial.html" />
+    <Content Include="pages\vextab\vextab.css" />
+    <Content Include="pages\vextab\vextab.html" />
+    <Content Include="pages\vextab\vextab.js" />
+    <Content Include="pages\websearch\websearch.css" />
+    <Content Include="pages\websearch\websearch.html" />
+    <Content Include="pages\websearch\websearch.js" />
+    <Content Include="sounds\acoustic\C1\1.mp3" />
+    <Content Include="sounds\acoustic\C1\10.mp3" />
+    <Content Include="sounds\acoustic\C1\11.mp3" />
+    <Content Include="sounds\acoustic\C1\12.mp3" />
+    <Content Include="sounds\acoustic\C1\2.mp3" />
+    <Content Include="sounds\acoustic\C1\3.mp3" />
+    <Content Include="sounds\acoustic\C1\4.mp3" />
+    <Content Include="sounds\acoustic\C1\5.mp3" />
+    <Content Include="sounds\acoustic\C1\6.mp3" />
+    <Content Include="sounds\acoustic\C1\7.mp3" />
+    <Content Include="sounds\acoustic\C1\8.mp3" />
+    <Content Include="sounds\acoustic\C1\9.mp3" />
+    <Content Include="sounds\acoustic\C2\1.mp3" />
+    <Content Include="sounds\acoustic\C2\10.mp3" />
+    <Content Include="sounds\acoustic\C2\11.mp3" />
+    <Content Include="sounds\acoustic\C2\12.mp3" />
+    <Content Include="sounds\acoustic\C2\2.mp3" />
+    <Content Include="sounds\acoustic\C2\3.mp3" />
+    <Content Include="sounds\acoustic\C2\4.mp3" />
+    <Content Include="sounds\acoustic\C2\5.mp3" />
+    <Content Include="sounds\acoustic\C2\6.mp3" />
+    <Content Include="sounds\acoustic\C2\7.mp3" />
+    <Content Include="sounds\acoustic\C2\8.mp3" />
+    <Content Include="sounds\acoustic\C2\9.mp3" />
+    <Content Include="sounds\acoustic\C3\1.mp3" />
+    <Content Include="sounds\acoustic\C3\10.mp3" />
+    <Content Include="sounds\acoustic\C3\11.mp3" />
+    <Content Include="sounds\acoustic\C3\12.mp3" />
+    <Content Include="sounds\acoustic\C3\2.mp3" />
+    <Content Include="sounds\acoustic\C3\3.mp3" />
+    <Content Include="sounds\acoustic\C3\4.mp3" />
+    <Content Include="sounds\acoustic\C3\5.mp3" />
+    <Content Include="sounds\acoustic\C3\6.mp3" />
+    <Content Include="sounds\acoustic\C3\7.mp3" />
+    <Content Include="sounds\acoustic\C3\8.mp3" />
+    <Content Include="sounds\acoustic\C3\9.mp3" />
+    <Content Include="sounds\acoustic\C4\1.mp3" />
+    <Content Include="sounds\acoustic\C4\10.mp3" />
+    <Content Include="sounds\acoustic\C4\11.mp3" />
+    <Content Include="sounds\acoustic\C4\12.mp3" />
+    <Content Include="sounds\acoustic\C4\2.mp3" />
+    <Content Include="sounds\acoustic\C4\3.mp3" />
+    <Content Include="sounds\acoustic\C4\4.mp3" />
+    <Content Include="sounds\acoustic\C4\5.mp3" />
+    <Content Include="sounds\acoustic\C4\6.mp3" />
+    <Content Include="sounds\acoustic\C4\7.mp3" />
+    <Content Include="sounds\acoustic\C4\8.mp3" />
+    <Content Include="sounds\acoustic\C4\9.mp3" />
+    <None Include="Package.StoreAssociation.xml" />
+    <None Include="MusicTab_StoreKey.pfx" />
+    <Content Include="pages\groupDetail\groupDetail.css" />
+    <Content Include="pages\groupDetail\groupDetail.html" />
+    <Content Include="pages\groupDetail\groupDetail.js" />
+    <Content Include="pages\groupedItems\groupedItems.css" />
+    <Content Include="pages\groupedItems\groupedItems.html" />
+    <Content Include="pages\groupedItems\groupedItems.js" />
+    <Content Include="pages\search\search.css" />
+    <Content Include="pages\search\search.html" />
+    <Content Include="pages\search\search.js" />
+    <Content Include="pages\settings\preferences\preferences.css" />
+    <Content Include="pages\settings\preferences\preferences.html" />
+    <Content Include="pages\settings\preferences\preferences.js" />
+    <Content Include="pages\settings\privacy\privacy.css" />
+    <Content Include="pages\settings\privacy\privacy.html" />
+    <Content Include="pages\settings\privacy\privacy.js" />
+    <Content Include="pages\stave\stave.css" />
+    <Content Include="pages\stave\stave.html" />
+    <Content Include="pages\stave\stave.js" />
+    <None Include="MusicTab_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <SDKReference Include="Microsoft.WinJS.1.0, Version=1.0" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\$(WMSJSProjectDirectory)\Microsoft.VisualStudio.$(WMSJSProject).targets" />
+  <!-- To modify your build process, add your task inside one of the targets below then uncomment
+       that target and the DisableFastUpToDateCheck PropertyGroup. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  <PropertyGroup>
+    <DisableFastUpToDateCheck>true</DisableFastUpToDateCheck>
+  </PropertyGroup>
+  -->
+</Project>

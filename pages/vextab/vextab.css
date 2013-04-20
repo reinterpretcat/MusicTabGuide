@@ -1,0 +1,80 @@
+﻿ #appBarHeader[role=vextab] {
+    -ms-grid-columns: 100px 1fr;
+    display: -ms-grid;   
+}
+#vextab-container {
+    padding-top: 0px;
+}
+
+#vextab-commands {
+    margin-top: 20px;
+    -ms-grid-column: 1;
+}
+
+#tabdiv {
+    -ms-grid-column: 2;
+    float: right;
+    font-size: 20px;
+    width: 100%;
+}
+
+
+#tabdiv .editor {
+    overflow-x: hidden;
+    line-height: 26px;
+}
+
+#tabdiv button, #tabdiv hr {
+    float: right;
+}
+
+#tabdiv .editor-error {
+    text-align: right;
+    margin-right: 10px;
+}
+
+#tutorialFlyout {
+   min-width:500px;
+}
+
+progress.withText
+{
+    color: inherit; /* to use the same text color as the page */
+    vertical-align: text-bottom; /* to pull the control down so that the bottom of the control align with the bottom of its label */
+}
+
+/* text style when put as the label for progress ring */
+.progressRingText
+{
+    font-family: "Segoe UI";
+}
+
+/* text style when put as the label a default size progress ring */
+.progressRingText
+{
+    position:absolute;
+    left:40%;
+    top:40%;
+}
+
+
+/* text style when put as the label for a medium size progress ring */
+.progressRingText.medium
+{
+    font-size: 20pt;
+    line-height: 24pt;
+}
+
+.progressRingText.medium progress
+{
+    margin-right: 10px;
+}
+
+.hidden {
+    display:none;
+}
+
+#vextab textarea {
+    min-width: 10px;
+    padding: 0;
+}

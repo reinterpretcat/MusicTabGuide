@@ -1,0 +1,80 @@
+﻿{
+	"groups":[
+	{
+		"id":1,
+		"backgroundImage" : "images/groups/group_detail.png",
+        "description" : "Opeth is a Swedish progressive metal band from Stockholm, formed in 1990. Though the group has been through several personnel changes, singer, guitarist, and songwriter Mikael Åkerfeldt has remained Opeth's driving force throughout the years. Opeth has consistently incorporated progressive, folk, blues, classical and jazz influences into their usually lengthy compositions, as well as noticeable influences from black metal and death metal, most notably in their early works. Many songs include acoustic guitar passages and strong dynamic shifts, as well as both death growls and clean vocals. Opeth rarely made live appearances supporting their first four albums; but since conducting their first world tour after the 2001 release of Blackwater Park, they have led several major world tours. ",
+        "groupImage" : "images/groups/group_view.png",
+        "key" : "opeth",
+        "tabsCount" : 3,
+        "shortTitle" : "Opeth",
+        "title" : "Opeth"
+	},
+	{
+		"id":2,
+		"backgroundImage" : "images/groups/group_detail.png",
+        "description" : "Metallica is an American heavy metal band from Los Angeles, California, whose releases include fast tempos, instrumentals, and aggressive musicianship that placed them as one of the founding 'big four' of thrash metal alongside Slayer, Megadeth, and Anthrax. They formed in 1981 when James Hetfield responded to an advertisement that drummer Lars Ulrich had posted in a local newspaper. As of 2003, the line-up features long-time lead guitarist Kirk Hammett (who joined the band in 1983) and bassist Robert Trujillo (a member since 2003) alongside Hetfield and Ulrich.",
+        "groupImage" : "images/groups/group_view.png",
+        "key" : "metallica",
+        "tabsCount" : 1,
+        "shortTitle" : "Metallica",
+        "title" : "Metallica"
+	},
+	{
+		"id":3,
+		"backgroundImage" : "images/groups/group_detail.png",
+        "description" : "My custom tabs",
+        "groupImage" : "images/groups/group_view.png",
+        "key" : "custom tabs",
+        "tabsCount" : 1,
+        "shortTitle" : "Custom tabs",
+        "title" : "Custom tabs"
+	}
+	],
+	"tabs": [
+	   { 
+			"backgroundImage" : "images/Items/guitarprox.png",
+			"lyrics" : "",
+			"groupId" : "1",
+			"details" : [ "Album: Blackwater Park"],
+			"added" : "12/28/2012",
+			"tileImage" : "images/Items/guitarprox.png",
+			"title" : "Harvest",
+			"path":"Opeth - Harvest.gpx",
+			 "rating": 0
+		},
+		{ 
+			"backgroundImage" : "images/Items/guitarpro3.png",
+			"lyrics" : "",
+			"groupId": "2",
+			"details" : ["Album: And Justice For All"],
+			"added" : "12/28/2012",
+			"tileImage" : "images/Items/guitarpro3.png",
+			"title" : "Fade to Black",
+			"path":"Metallica - Fade to Black.gp3",
+			"rating": 5
+		},
+		{ 
+			"backgroundImage" : "images/Items/guitarpro3.png",
+			"lyrics" : "",
+			"groupId": "2",
+			"details" : ["Album: Master of Puppets"],
+			"added" : "12/28/2012",
+			"tileImage" : "images/Items/guitarpro3.png",
+			"title" : "Master of Puppets",
+			"path":"Metallica - Master of Puppets.gp3",
+			"rating": 4
+		},
+		{ 
+			"backgroundImage" : "images/Items/guitarprox.png",
+			"lyrics" : "",
+			"groupId": "3",
+			"details" : [""],
+			"added" : "12/30/2012",
+			"tileImage" : "images/Items/guitarprox.png",
+			"title" : "Your tab",
+			"path":"Temp.gpx",
+			"rating": 0
+		}
+	]
+}
