@@ -1,5 +1,9 @@
 ﻿MusicTab.namespace('MusicTab.Stave.View');
 
+
+// TODO need refactoring:
+// a lot of conditional logic
+
 MusicTab.Stave.View = klass(null, {
     __construct: function (params) {
         this.init(params.selector, params.page, params.track, params.context);

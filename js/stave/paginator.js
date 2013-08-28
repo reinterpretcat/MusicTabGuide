@@ -10,11 +10,9 @@ MusicTab.Stave.Paginator = klass(null, {
         this.staveHelper = params.staveHelper;
     },
     
-        // isert tab pages
+    // insert tab pages
     insertPages: function(pages, track) {
         var root = document.getElementById(this.context.placeHolderId);
-
-        //var pageWidth = this.context.width - 20;
         var pageNumber = 1;
         var count = pages.length;
         var context = this.context;
@@ -23,7 +21,7 @@ MusicTab.Stave.Paginator = klass(null, {
             var div = document.createElement("div");
             div.setAttribute("class", context.tabDivClass);
             div.setAttribute("id", id);
-            div.setAttribute("label", pageNumber + " of " + count);
+            div.setAttribute("label", pageNumber++ + " of " + count);
             root.appendChild(div);
             try {
                 (new MusicTab.Stave.View({
@@ -35,7 +33,6 @@ MusicTab.Stave.Paginator = klass(null, {
             } catch(err) {
                 console.log(err.message);
             }
-            pageNumber++;
         });
     },
 

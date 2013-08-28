@@ -1,8 +1,8 @@
 ﻿var MusicTab = MusicTab || {};
 
 // namespace function
-MusicTab.namespace = function (ns_string) {
-    var parts = ns_string.split('.'),
+MusicTab.namespace = function (nsString) {
+    var parts = nsString.split('.'),
     parent = MusicTab,
     i;
     // strip redundant leading global
@@ -20,35 +20,35 @@ MusicTab.namespace = function (ns_string) {
 };
 
 // global klass function
-klass = function (Parent, props) {
-    var Child, F, i;
+klass = function (parent, props) {
+    var child, f, i;
     // 1.
     // new constructor
-    Child = function () {
-        if (Child.uber && Child.uber.hasOwnProperty("__construct")) {
-            Child.uber.__construct.apply(this, arguments);
+    child = function () {
+        if (child.uber && child.uber.hasOwnProperty("__construct")) {
+            child.uber.__construct.apply(this, arguments);
         }
-        if (Child.prototype.hasOwnProperty("__construct")) {
-            Child.prototype.__construct.apply(this, arguments);
+        if (child.prototype.hasOwnProperty("__construct")) {
+            child.prototype.__construct.apply(this, arguments);
         }
     };
     // 2.
     // inherit
-    Parent = Parent || Object;
-    F = function () { };
-    F.prototype = Parent.prototype;
-    Child.prototype = new F();
-    Child.uber = Parent.prototype;
-    Child.prototype.constructor = Child;
+    parent = parent || Object;
+    f = function () { };
+    f.prototype = parent.prototype;
+    child.prototype = new f();
+    child.uber = parent.prototype;
+    child.prototype.constructor = child;
     // 3.
     // add implementation methods
     for (i in props) {
         if (props.hasOwnProperty(i)) {
-            Child.prototype[i] = props[i];
+            child.prototype[i] = props[i];
         }
     }
     // return the "class"
-    return Child;
+    return child;
 };
 
 mix = function() {
