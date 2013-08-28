@@ -1,16 +1,16 @@
 ﻿MusicTab.namespace('MusicTab.Stave.View');
 
 MusicTab.Stave.View = klass(null, {
-    __construct: function (sel, page, track) {
-        this.init(sel, page, track);
+    __construct: function (params) {
+        this.init(params.selector, params.page, params.track, params.context);
     },
 
-    init: function (sel, page, track) {
+    init: function (selector, page, track, context) {
 
         this.page = page;
-        this.width = $(sel).attr("width") || 400;
-        this.height = $(sel).attr("height") || 200;
-        this.scale = $(sel).attr("scale") || 1.0;
+        this.width = context.width - 20;
+        this.height = context.height;
+        this.scale = context.scale;
         this.stringCount = track.strings.length >= 4 && track.strings.length <= 6 ? track.strings.length : 6; // 4-6 is valid for vexflow
 
         this.staveHelper = new MusicTab.Stave.Helper({
@@ -21,17 +21,17 @@ MusicTab.Stave.View = klass(null, {
 
         // canvas
         this.canvas = $('<canvas></canvas>').addClass("vex-canvas");
-        $(sel).append(this.canvas);
+        $(selector).append(this.canvas);
         this.renderer = new Vex.Flow.Renderer(this.canvas[0], Vex.Flow.Renderer.Backends.CANVAS);
 
         // initilize context
-        this.ctx_sel = $(sel).find(".vex-canvas");
+        this.ctx_sel = $(selector).find(".vex-canvas");
         this.ctx = this.renderer.getContext();
         this.ctx.setBackgroundFillStyle(this.ctx_sel.css("background-color"));
         this.ctx.scale(this.scale, this.scale);
 
 
-        this.message = $(sel).attr("label");
+        this.message = $(selector).attr("label");
 
         this.music = new Vex.Flow.Music();
         this.valid = false;
