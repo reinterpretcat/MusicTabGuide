@@ -1,12 +1,13 @@
-﻿MusicTab.namespace('MusicTab.Stave.StaveHelper');
+﻿MusicTab.namespace('MusicTab.Stave.Helper');
 
 /* encapsulates migic constants */
-MusicTab.Stave.StaveHelper = klass(null, {
+MusicTab.Stave.Helper = klass(null, {
     __construct: function(params) {
         this.init(params);
     },
     
     init: function (params) {
+        
         this.scale = params.scale || 1.0;
         this.width = (params.width || 400) / this.scale;
         this.height = (params.height || 200) / this.scale;
@@ -51,13 +52,7 @@ MusicTab.Stave.StaveHelper = klass(null, {
         return Math.min(result, this.getActualWidth());
     },
 
-   /* getMeasureLength: function (count) {
-        if (count > 25) {
-            return count > 1 ? (44 * count) + 10 * this.scale : 60;
-        }
-        return count > 1 ? ((120 * Math.log(count))) + 10 * this.scale : 60;
-    },*/
-    
+   
     getLineGap: function () {
         return (this.height - (this.linePerPage * this.oneLineHeight)) / this.linePerPage;
     },
@@ -85,8 +80,4 @@ MusicTab.Stave.StaveHelper = klass(null, {
         }
         return measures;
     }
-    
-    /* log10: function (val) {
-        return Math.log(val) / Math.LN10;
-    }*/
 });

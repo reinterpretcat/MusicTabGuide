@@ -1,6 +1,6 @@
-﻿MusicTab.namespace('MusicTab.Stave.StaveEx');
+﻿MusicTab.namespace('MusicTab.Stave.View');
 
-MusicTab.Stave.StaveEx = klass(null, {
+MusicTab.Stave.View = klass(null, {
     __construct: function (sel, page, track) {
         this.init(sel, page, track);
     },
@@ -13,7 +13,7 @@ MusicTab.Stave.StaveEx = klass(null, {
         this.scale = $(sel).attr("scale") || 1.0;
         this.stringCount = track.strings.length >= 4 && track.strings.length <= 6 ? track.strings.length : 6; // 4-6 is valid for vexflow
 
-        this.staveHelper = new MusicTab.Stave.StaveHelper({
+        this.staveHelper = new MusicTab.Stave.Helper({
             height: this.height,
             width: this.width,
             scale: this.scale
@@ -44,14 +44,7 @@ MusicTab.Stave.StaveEx = klass(null, {
             this.tuning = new Vex.Flow.Tuning("E/2,A/2,D/3,G/3");
         }else{
             this.tuning = new Vex.Flow.Tuning();
-        }
-
-        this.draw();
-        
-        if (this.message) {
-            this.ctx.setFont("Times", 12, "italic");
-            this.ctx.fillText(this.message, (this.width / (2 * this.scale)) - 10 * this.scale, this.height / this.scale - 15);
-        }
+        }      
     },
 
     isValid: function () { return this.valid; },
@@ -66,7 +59,7 @@ MusicTab.Stave.StaveEx = klass(null, {
         this.ctx.scale(this.scale, this.scale);
     },
 
-    draw: function () {
+    show: function () {
 
         this.resize(this.width, this.height);
         this.ctx.clear();
@@ -117,6 +110,11 @@ MusicTab.Stave.StaveEx = klass(null, {
             }
             this.offsetX = 20;
 
+        }
+        
+        if (this.message) {
+            this.ctx.setFont("Times", 12, "italic");
+            this.ctx.fillText(this.message, (this.width / (2 * this.scale)) - 10 * this.scale, this.height / this.scale - 15);
         }
 
         return this;

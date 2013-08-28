@@ -88,10 +88,12 @@
     <Content Include="js\data\init.js" />
     <Content Include="js\default.js" />
     <Content Include="js\lastfm\fetcher.js" />
-    <Content Include="js\stave\staveEx.js" />
-    <Content Include="js\stave\staveHelpers.js" />
+    <Content Include="js\stave\context.js" />
+    <Content Include="js\stave\paginator.js" />
+    <Content Include="js\stave\view.js" />
+    <Content Include="js\stave\helper.js" />
     <Content Include="js\stave\tabdiv-min.js" />
-    <Content Include="js\stave\tabRestNote.js" />
+    <Content Include="js\stave\tabrestnote.js" />
     <Content Include="js\stave\vexflow\accidental.js" />
     <Content Include="js\stave\vexflow\annotation.js" />
     <Content Include="js\stave\vexflow\articulation.js" />
